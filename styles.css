@@ -1,0 +1,434 @@
+/* EXAMEN SEGUNDO PARCIAL - DESARROLLO WEB I
+   Estudiante: __________________________
+   Curso: _______________________________
+
+   INSTRUCCIONES: Implementar aquí TODO el CSS.
+   No modificar la estructura HTML ni los nombres de las clases.
+
+   1. Estilos generales, tipografía y contenedor
+   2. Header y navegación (Flexbox)
+   3. Portada principal (Flexbox)
+   4. Catálogo de 6 vehículos (CSS Grid)
+   5. Tarjetas, botones, hover y sombras
+   6. Nosotros y beneficios (Grid / Flexbox)
+   7. Formulario y estados :focus
+   8. Footer
+   9. Media queries: tablet <= 900px; móvil <= 600px
+*/
+/*global*/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  background-color:rgb(243, 242, 245);
+  line-height: 1.6;
+}
+/*Seccion 1 cabecera y navegacion*/
+/*Header*/
+.contenedor{
+  width: 90%;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+.encabezado{
+  background-color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 1000  ;
+}
+.encabezado-contenido{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 75px;
+}
+.marca img{
+  width: 42px;
+  height: 42px;
+  border-radius: 6px;
+}
+.navegacion{
+  display: flex;
+  align-items: center;
+}
+ul{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+
+.menu{
+   display: flex;
+   gap: 2rem;
+}
+.menu a{
+  font-size: 15px;
+  color:#4a5568;
+  font-weight: bold;
+}
+/*botones*/
+.boton{
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;
+}
+.boton-principal{
+  background-color:mediumpurple;
+  color: whitesmoke;
+}
+.boto-cabecera{
+  padding: 10 px 20px;
+}
+/*Finaliza header*/
+
+/*SECCIÓN 2: PORTADA PRINCIPAL */
+/*CONTENEDOR*/
+.hero{
+  background:darkslateblue;
+  color: aliceblue;
+  padding: 60px 0;
+}
+.hero-contenido{
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ gap: 40px;
+}
+.hero-texto{
+  width: 50%;
+}
+.etiqueta{
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  color:#c59b27;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.hero-texto h1{
+  font-size: 40px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color:whitesmoke;
+}
+.hero-texto p{
+  color: #959eab;
+  font-size: 15px;
+  margin-bottom: 25px;
+}
+.hero-acciones{
+  display: flex;
+  gap: 15px;
+}
+.boton-claro{
+  background-color: transparent;
+  color:whitesmoke;
+  border: 1px solid #aa58f6;
+}
+.hero-imagen{
+  width: 50%;
+}
+.hero-imagen img{
+  border-radius: 12px;
+  height: 340px;
+  object-fit: cover;/* Mantiene la proporción y cubre el rectángulo de 12x340 */
+}
+/*Fin de la portada*/
+
+/*SECCIÓN 3: CATÁLOGO DE VEHÍCULOS*/
+.seccion{
+  padding: 60px 0;
+}
+.catalogo{
+  background-color: #ecdff7;
+}
+.seccion-encabezado{
+  text-align: center;
+  margin-bottom: 40px;
+}
+.seccion-encabezado h2{
+  font-size: 30px;
+  color: black;
+  margin: bottom 10px;
+}
+.seccion-encabezado p{
+  color: #5a5e64;
+  font-size: 15px;
+}
+.vehiculos-grid{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.vehiculo-card{
+  background-color: rgb(249, 254, 255);
+  width: 32%;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid aliceblue;
+  display: flex;
+  flex-direction: column;
+}
+.vehiculo-card img{
+  height: 200px;
+  object-fit: cover;
+}
+.vehiculo-info{
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.vehiculo-anio{
+  font-size: 12px;
+  color: #71757b;
+  font-weight: bold;
+}
+.vehiculo-info h3{
+  font-size: 18px;
+  color: darkslateblue;
+  margin: 5px 0;
+}
+.vehiculo-precio {
+  font-size: 18px;
+  font-weight: bold;
+  color: #c59b27;
+  margin-bottom: 15px;
+}
+.boton-secundario {
+  background-color: #cd98ff;
+  color: #ffffff;
+  width: 100%;
+  display: block;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  text-align: center;
+}
+.vehiculo-detalles{
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  margin-top: auto;
+}
+.vehiculo-detalles li{
+  background-color: rgb(245, 234, 253);
+  color:#959eab;
+  font-size: 11px;
+  padding: 5px 8px;
+  border-radius: 15px;
+}
+/*Fin del catalogo */
+/*SECCIÓN 4: NOSOTROS*/
+.nosotros{
+  background-color: white;
+}
+.nosotros-grid{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+.nosotros-texto {
+  width: 45%;
+}
+
+.nosotros-texto h2{
+  font-size: 30px;
+  color: black;
+  margin-bottom: 20px;
+}
+.nosotros-texto p{
+  color: #5a5e64;
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+.beneficios-grid{
+  width: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.beneficio{
+  background-color:#ecdff7;
+  width: 48%;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid whitesmoke;
+}
+.beneficio-icono{
+  display: block;
+  color: #c59b27;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.beneficio h3{
+  font-size: 15px;
+  color: #4a5568;
+  margin-bottom: 5px;
+}
+.beneficio p{
+  font-size: 12px;
+  color: #959eab;
+}
+.beneficios-grid {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.beneficio {
+  background-color: #ffffff;
+  width: 48%;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #d1d2d3;
+}
+/*fin de seccion de nosotros*/
+/*SECCIÓN 5: FORMULARIO DE CONTACTO*/
+.contacto-grid{
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+.contacto-texto{
+  width: 40%;
+}
+.contacto-texto h2{
+  font-size: 30px;
+  color: #112233;
+  margin-bottom: 20px;
+}
+.contacto-texto p {
+  color: #55606e;
+  margin-bottom: 15px;
+  font-size: 15px;
+}
+
+.formulario{
+  width: 55%;
+  background-color: #ebedf0;
+  padding: 30px;
+  border-radius: 12px;
+}
+.formulario-fila{
+  display: flex;
+  gap: 15px;
+}
+.formulario-fila .campo{
+  width: 50%;
+}
+.campo{
+  margin-bottom: 15px;
+}
+.campo label{
+  display: block;
+  font-size: 13px;
+  font-weight: bold;
+  color: #112233;
+  margin-bottom: 5px;
+}
+.campo input,.campo select,.campo textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #ffffff;
+}
+.aceptacion{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  color: #55606e;
+  margin: 15px 0 20px;
+}
+.boton-enviar{
+  width: 100%;
+  padding: 12px;
+}
+/*fin de formulario*/
+/*SECCIÓN 6: PIE DE PÁGINA*/
+.pie-pagina{
+  background-color: darkslateblue;
+  color: #ffffff;
+  padding: 50px 0 20px;
+}
+.pie-grid{
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 30px;
+  border-bottom: 2px solid rgb(226, 226, 226);
+}
+.pie-grid h2{
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+.pie-grid h3{
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+.pie-grid p{
+  color: #ecdff7;
+  font-size: 14px;
+}
+.pie-grid ul li{
+  margin-bottom: 8px;
+}
+.pie-grid ul li a{
+  color: #ecdff7;
+  font-size: 14px;
+}
+.pie-inferior{
+  padding-top: 20px;
+  color: #ecdff7;
+  font-size: 12px;
+}
+/*fin del footer*/
+/*Adaptable a cualquier pantalla*/
+@media (max-width: 900px){
+  .hero-contenido,
+  .nosotros-grid,
+  .contacto-grid{
+    flex-direction: column;
+  }
+  .hero-texto,
+  .hero-imagen,
+  .nosotros-texto,
+  .beneficios-grid,
+  .contacto-texto,
+  .formulario{
+    width: 100%;
+  }
+  .vehiculo-card{
+    width: 48%;
+  }
+}
+@media (max-width: 600px){
+  .menu,
+  .boton-cabecera{
+    display: none;
+  }
+  .vehiculo-card{
+    width: 100%;
+  }
+  .beneficio{
+    width: 100%;
+  }
+  .formulario-fila{
+    flex-direction: column;
+  }
+  .formulario-fila .campo{
+    width: 100%;
+  }
+}
